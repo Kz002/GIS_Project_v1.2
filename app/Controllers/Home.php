@@ -36,4 +36,13 @@ class Home extends BaseController
         ];
         return view('v_template', $data);
     }
+    public function getCoordinate()
+    {
+        $data = [
+            'judul' => 'Get Coordinate',
+            'page'  => 'v_get_coordinate',
+        ];
+        return view('v_template', $data);
+    }
+    
 }

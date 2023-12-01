@@ -82,6 +82,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">View Map:</h6>
                             <a class="collapse-item" href="<?= base_url('Home/baseMap') ?>">Base Map</a>
+                            <a class="collapse-item" href="<?= base_url('Home/getCoordinate') ?>">Get Coordinate</a>
                             <a class="collapse-item" href="<?= base_url('Home/Marker') ?>">Mahkota Kerupuk Location</a>
                             <a class="collapse-item" href="<?= base_url('Home/geoJSON') ?>">Distribution Area</a>
                         </div>
@@ -106,10 +107,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="charts.html">
-                        <i class="fas fa-route"></i>
-                            <span>Pemetaan Rute</span></a>
-                    </li>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-route"></i>
+                    <span>Pemetaan Rute</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Routing</h6>
+                        <a class="collapse-item" href="<?= base_url('Lokasi/rute') ?>">Without GPS</a>
+                        <a class="collapse-item" href="<?= base_url('Lokasi/rute2') ?>">With GPS</a>
+                    </div>
+                </div>
+            </li>
             
                     <!-- Divider -->
                     <hr class="sidebar-divider">

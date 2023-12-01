@@ -63,10 +63,8 @@ $.getJSON("<?= base_url('provinsi/13.geojson') ?>", function(data){
             }
         }
     })
-    .bindPopup("<img src='<?= base_url('images/mahkota.png')  ?>' width='250px'><br>" +
-        "<b>Provinsi Aceh</b><br>" +
-        "Penduduk : 1.000.000.000<br>" +
-        "Luas     : 58.377 Km2")
+    .bindPopup("<center><img src='<?= base_url('images/sumatera-barat-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Sumatera Barat</b></h4></center>")
     .addTo(map);
 });
 // Riau
@@ -78,7 +76,10 @@ $.getJSON("<?= base_url('provinsi/14.geojson') ?>", function(data){
                 fillOpacity: 0,
             }
         }
-    }).addTo(map);
+    })
+    .bindPopup("<center><img src='<?= base_url('images/riau-icon.png')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Riau</b></h4></center>")
+    .addTo(map);
 });
 // Sumatera Selatan
 $.getJSON("<?= base_url('provinsi/16.geojson') ?>", function(data){
@@ -89,7 +90,10 @@ $.getJSON("<?= base_url('provinsi/16.geojson') ?>", function(data){
                 fillOpacity: 0,
             }
         }
-    }).addTo(map);
+    })
+    .bindPopup("<center><img src='<?= base_url('images/sumatera-selatan-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Sumatera Selatan</b></h4></center>")
+    .addTo(map);
 });
 // Kepulauan Riau
 $.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
@@ -100,38 +104,19 @@ $.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
                 fillOpacity: 0,
             }
         }
-    }).addTo(map);
-});
-// Jakarta
-$.getJSON("<?= base_url('provinsi/31.geojson') ?>", function(data){
-    L.geoJson(data, {
-        style : function(feature) {
-            return{
-                color: 'orange',
-                fillOpacity: 0,
-            }
-        }
-    }).addTo(map);
-});
-// Jawa Barat
-$.getJSON("<?= base_url('provinsi/32.geojson') ?>", function(data){
-    L.geoJson(data, {
-        style : function(feature) {
-            return{
-                color: 'chocolate',
-                fillOpacity: 0,
-            }
-        }
-    }).addTo(map);
+    })
+    .bindPopup("<center><img src='<?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Kepulauan Riau</b></h4></center>")
+    .addTo(map);
 });
 
-// Circle untuk menandakan Kota
-L.circle([-0.223019540616604, 100.63301640633208], {
-    radius: 100,
-    color: 'green',
-    fillColor: 'green',
-    fillOpacity: 0.2,
-})
-.bindPopup("Area Wibu")
-.addTo(map);
+// Circle untuk menandakan Kota, Prov Sumbar
+// L.circle([-0.5974628561058486, 100.73632188357192], {
+//     radius: 1000,
+//     color: 'green',
+//     fillColor: 'green',
+//     fillOpacity: 0.2,
+// })
+// .bindPopup("Area Wibu")
+// .addTo(map);
 </script>

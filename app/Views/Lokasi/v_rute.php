@@ -1,3 +1,12 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label for="">Jarak (*Meter)</label>
+            <input class="form-control" name="jarak" id="Jarak">
+        </div>
+    </div>
+</div>
+<br>
 <div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
 
 <!-- default leaflet -->
@@ -31,34 +40,64 @@ const openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.pn
 const baseLayers = {
 	'OpenStreetMap': osm,
 	'OpenStreetMap.HOT': osmHOT,
-    'Topologi Map' : openTopoMap
+    'Topo Map' : openTopoMap
 };
 
 const overlays = {
 	'Cities': cities
 };
 
-const layerControl = L.control.layers(baseLayers,null,{collapsed:true})
+const layerControl = L.control.layers(baseLayers,null,{collapsed:false})
 .addTo(map);
 
-//== Marker ==
-L.marker([-0.48090207068895996, 100.63787782846228])
-    .bindPopup("<center><img src='<?= base_url('images/mahkota.png')  ?>'width='200px'></center><br>" +
-        "<h4><center>MAHKOTA KERUPUK</center></h4>" +
-        "<b>Alamat: </b>Saruaso, Kec. Tj. Emas, Kab. Tanah Datar, Sumatera Barat<br>" +
-        "<b>Latitude: </b>-0.4807710011019512<br>" + 
-        "<b>Longitude: </b>100.6378307935375") 
-    .addTo(map);
+//rute
+var routingControl = L.Routing.control({
+  waypoints: [
+    L.latLng(-0.4809067745284627, 100.6379615346594),  //asal
+    L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
+  ]
+}).addTo(map);
 
-//== polygon ==
-L.polygon([
-    [-0.48089137419797784, 100.6376259817223],
-    [-0.4809991617108263, 100.63767247993664],
-    [-0.4809315303304076, 100.63791553878436],
-    [-0.48080472149033815, 100.63788594901158]
-], {
-    color: 'green',
-    fillColor: 'green',
-    fillOpacity: 1,
-}).addTo(map)
+//mengambil jarak
+routingControl.on('routesfound', function(e) {
+    var routes = e.routes;
+    var summary = routes[0].summary;
+    var totalDistance = summary.totalDistance;
+    //kirim nilai jarak ke input
+    document.getElementById('Jarak').value = totalDistance;
+    // animasiCar(routes[0]);
+});
+
+<?php foreach ($lokasi as $key => $value) { ?>
+    L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
+    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
+        '<h4><?= $value['nama_lokasi'] ?></h4>' +
+        'Alamat : <?= $value['alamat_lokasi'] ?><br>')
+    .addTo(map);
+<?php } ?>
+// membuat animasi perjalanan
+// function animasiCar(route) {
+//     var iconCar = L.icon({
+//     iconUrl: '?= base_url('images/car.png') ?>',
+//     iconSize: [30, 40], // size of the icon
+//     });
+
+// var car = L.marker([route.coordinates[0].lat, route.coordinates[0].lng], {
+//     icon: iconCar
+// }).addTo(map);
+
+// var index=0;
+// var maxIndex = route.coordinates.length - 1;
+
+// function animate() {
+//     car.setLatLng([route.coordinates[index].lat, route.coordinates[index].lng]);
+//     index++;
+//     if (index > maxIndex) {
+//         index = 0;
+//     }  
+//     setTimeout(animate, 200);
+// }
+// animate();
+// }
+
 </script>

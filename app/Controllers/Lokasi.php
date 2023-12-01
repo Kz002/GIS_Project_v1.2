@@ -189,4 +189,22 @@ class Lokasi extends BaseController
         session()->setFlashdata('pesan', 'Data Lokasi Berhasil Di delete !!!');
         return redirect()->to('Lokasi/index');
     }
+    public function rute()
+    {
+        $data = [
+            'judul' => 'Rute',
+            'page'  => '/lokasi/v_rute',
+            'lokasi' => $this->ModelLokasi->getAlldata(),
+        ];
+        return view('v_template', $data);
+    }
+    public function rute2()
+    {
+        $data = [
+            'judul' => 'Rute Dari Lokasi User',
+            'page'  => 'lokasi/v_rute2',
+            'lokasi' => $this->ModelLokasi->getAlldata(),
+        ];
+        return view('v_template', $data);
+    }
 }
