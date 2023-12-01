@@ -20,4 +20,20 @@ class Home extends BaseController
         ];
         return view('v_template', $data);
     }
+    public function Marker()
+    {
+        $data = [
+            'judul' => 'Mahkota Kerupuk Location',
+            'page'  => 'v_marker',
+        ];
+        return view('v_template', $data);
+    }
+    public function geoJSON()
+    {
+        $data = [
+            'judul' => 'Distribution Area',
+            'page'  => 'v_geojson',
+        ];
+        return view('v_template', $data);
+    }
 }
