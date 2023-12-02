@@ -47,16 +47,48 @@ const overlays = {
 	'Cities': cities
 };
 
-const layerControl = L.control.layers(baseLayers,null,{collapsed:false})
+const layerControl = L.control.layers(baseLayers,null,{collapsed:true})
 .addTo(map);
+
+//pemetaan lokasi dipanggil dari database
+<?php foreach ($lokasi as $key => $value) { ?>
+    L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
+    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
+        '<h4><?= $value['nama_lokasi'] ?></h4>' +
+        'Alamat : <?= $value['alamat_lokasi'] ?><br>' +
+        '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>' +
+        '<button class="btn btn-info" onclick="return mulai([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Mulai</button>')
+    .addTo(map);
+<?php } ?>
 
 //rute
 var routingControl = L.Routing.control({
   waypoints: [
     L.latLng(-0.4809067745284627, 100.6379615346594),  //asal
-    L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
-  ]
-}).addTo(map);
+    // L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
+  ],
+    geocoder: L.Control.Geocoder.nominatim(),
+    routeWhileDragging: true,
+    reverseWaypoints: true,
+    showAlternatives: true,
+    altLineOptions: {
+        styles: [
+            {color: 'black', opacity: 0.15, weight: 9},
+            {color: 'white', opacity: 0.8, weight: 6},
+            {color: 'blue', opacity: 0.5, weight: 2}
+        ]
+    }
+})
+routingControl.addTo(map);
+
+function keSini(latLng){
+    var latLng=L.latLng(latLng);
+    routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, latLng);
+} 
+function mulai(latLng){
+    var latLng=L.latLng(latLng);
+    routingControl.spliceWaypoints(0, 1, latLng);
+} 
 
 //mengambil jarak
 routingControl.on('routesfound', function(e) {
@@ -68,13 +100,6 @@ routingControl.on('routesfound', function(e) {
     // animasiCar(routes[0]);
 });
 
-<?php foreach ($lokasi as $key => $value) { ?>
-    L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
-    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
-        '<h4><?= $value['nama_lokasi'] ?></h4>' +
-        'Alamat : <?= $value['alamat_lokasi'] ?><br>')
-    .addTo(map);
-<?php } ?>
 // membuat animasi perjalanan
 // function animasiCar(route) {
 //     var iconCar = L.icon({

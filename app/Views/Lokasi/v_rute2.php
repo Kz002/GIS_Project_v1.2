@@ -7,10 +7,15 @@
     </div>
 </div>
 <br>
-<div id="map" style="width: 100%; height: 100vh; " class="leaflet-map-pane"></div>
+<div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
 
 <!-- default leaflet -->
 <script>
+function keSini(latLng){
+    var latLng=L.latLng(latLng);
+    routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, latLng);
+} 
+
 const cities = L.layerGroup();
 // const mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
 // const mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
@@ -47,58 +52,107 @@ const overlays = {
 	'Cities': cities
 };
 
-const layerControl = L.control.layers(baseLayers,null,{collapsed:false}).addTo(map);
+const layerControl = L.control.layers(baseLayers,null,{collapsed:false})
+.addTo(map);
+
+let routingControl;
 
 //geolocation
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
-    var routingControl = L.Routing.control({
+    routingControl = L.Routing.control({
         waypoints: [
         L.latLng(position.coords.latitude, position.coords.longitude),  //lokasi user
-        L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
-  ]
-}).addTo(map);
-routingControl.on('routesfound', function(e) {
+        // L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
+  ],
+  geocoder: L.Control.Geocoder.nominatim(),
+    routeWhileDragging: true,
+    reverseWaypoints: true,
+    showAlternatives: true,
+    altLineOptions: {
+        styles: [
+            {color: 'black', opacity: 0.15, weight: 9},
+            {color: 'white', opacity: 0.8, weight: 6},
+            {color: 'blue', opacity: 0.5, weight: 2}
+        ]
+    }
+})
+routingControl.addTo(map);
+
+//pemetaan lokasi dipanggil dari database
+
+
+// $(document).on("click",".keSini",function() {
+//     let latLng=[$(this).data('lat'),$(this).data('lng')];
+//     control.spliceWaypoints(control.getWaypoints().length -1, 1, latLng)
+// })
+
+getLocation();
+setInterval(() => {
+    getLocation();
+}, 3000);
+
+function getLocation() {
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "gk support bg";
+    }
+}
+
+let centerMap = false;
+function showPosition(position) {
+    console.log('Route Sekarang',position.coords.latitude, position.coords.longitude)
+    $("[name=latNow]").val(position.coords.latitude);
+    $("[name=lngNow]").val(position.coords.longitude);
+    let latLng=[position.coords.latitude, position.coords.longitude];
+        routingControl.spliceWaypoints(0, 1, latLng);
+        if (centerMap==false)
+        {
+            map.panTo(latLng);
+            centerMap = true;
+        }
+}
+
+    routingControl.on('routesfound', function(e) {
     var routes = e.routes;
     var summary = routes[0].summary;
     var totalDistance = summary.totalDistance;
     //kirim nilai jarak ke input
     document.getElementById('Jarak').value = totalDistance;
     // animasiCar(routes[0]);
+    });
 });
-});
-// function animasiCar(route) {
-//     var iconCar = L.icon({
-//     iconUrl: '?= base_url('images/car.png') ?>',
-//     iconSize: [30, 40], // size of the icon
-//     });
-
-// var car = L.marker([route.coordinates[0].lat, route.coordinates[0].lng], {
-//     icon: iconCar
-// }).addTo(map);
-
-// var index=0;
-// var maxIndex = route.coordinates.length - 1;
-
-// function animate() {
-//     car.setLatLng([route.coordinates[index].lat, route.coordinates[index].lng]);
-//     index++;
-//     if (index > maxIndex) {
-//         index = 0;
-//     }  
-//     setTimeout(animate, 200);
-// }
-// animate();
-// }
 } else {
   alert('Geolocation is not supported by this browser.');
 }
 
 //rute
+// var routingControl = L.Routing.control({
+//   waypoints: [
+//     L.latLng(position.coords.latitude, position.coords.longitude),  //asal
+//     // L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
+//   ],
+//     geocoder: L.Control.Geocoder.nominatim(),
+//     routeWhileDragging: true,
+//     reverseWaypoints: true,
+//     showAlternatives: true,
+//     altLineOptions: {
+//         styles: [
+//             {color: 'black', opacity: 0.15, weight: 9},
+//             {color: 'white', opacity: 0.8, weight: 6},
+//             {color: 'blue', opacity: 0.5, weight: 2}
+//         ]
+//     }
+// })
+// routingControl.addTo(map);
 
-//mengambil jarak
-
-
-// membuat animasi perjalanan
-
+<?php foreach ($lokasi as $key => $value) { ?>
+    L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
+    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
+        '<h4><?= $value['nama_lokasi'] ?></h4>' +
+        'Alamat : <?= $value['alamat_lokasi'] ?><br>' +
+        '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
+    .addTo(map);
+<?php } ?>
 </script>
