@@ -207,4 +207,13 @@ class Lokasi extends BaseController
         ];
         return view('v_template', $data);
     }
+    public function rute3()
+    {
+        $data = [
+            'judul' => 'Rute Bebas',
+            'page'  => 'lokasi/v_rute3',
+            'lokasi' => $this->ModelLokasi->getAlldata(),
+        ];
+        return view('v_template', $data);
+    }
 }

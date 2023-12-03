@@ -22,15 +22,14 @@
     border: none;
     border-radius: 4px;
   }
+
+  .leaflet-popup-content button:hover {
+    background-color: #0056b3;
+  }
 </style>
 
 <!-- default leaflet -->
 <script>
-function keSini(latLng){
-    var latLng=L.latLng(latLng);
-    routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, latLng);
-} 
-
 const cities = L.layerGroup();
 // const mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
 // const mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
@@ -93,7 +92,7 @@ function showUserLocation(latitude, longitude) {
 let routingControl;
 //geolocation
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function(position) {
     routingControl = L.Routing.control({
         waypoints: [
         L.latLng(position.coords.latitude, position.coords.longitude),  //lokasi user
@@ -110,20 +109,13 @@ if (navigator.geolocation) {
             {color: 'blue', opacity: 0.5, weight: 2}
         ]
     },
-    createMarker: function(i, waypoint, number) {
-        // Return null to prevent default marker creation
-        return null;
-    }
+
+    // createMarker: function(i, waypoint, number) {
+    //     // Return null to prevent default marker creation
+    //     return null;
+    // }
 })
 routingControl.addTo(map);
-
-//pemetaan lokasi dipanggil dari database
-
-
-// $(document).on("click",".keSini",function() {
-//     let latLng=[$(this).data('lat'),$(this).data('lng')];
-//     control.spliceWaypoints(control.getWaypoints().length -1, 1, latLng)
-// })
 
 getLocation();
 setInterval(() => {
@@ -139,7 +131,7 @@ function getLocation() {
 }
 
 let centerMap = false;
-function showPosition(position) {
+    function showPosition(position) {
     console.log('Route Sekarang',position.coords.latitude, position.coords.longitude)
     $("[name=latNow]").val(position.coords.latitude);
     $("[name=lngNow]").val(position.coords.longitude);
@@ -151,7 +143,7 @@ function showPosition(position) {
             centerMap = true;
         }
         showUserLocation(position.coords.latitude, position.coords.longitude);
-}
+    }
 
     routingControl.on('routesfound', function(e) {
     var routes = e.routes;
@@ -166,26 +158,24 @@ function showPosition(position) {
   alert('Geolocation is not supported by this browser.');
 }
 
-//rute
-// var routingControl = L.Routing.control({
-//   waypoints: [
-//     L.latLng(position.coords.latitude, position.coords.longitude),  //asal
-//     // L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
-//   ],
-//     geocoder: L.Control.Geocoder.nominatim(),
-//     routeWhileDragging: true,
-//     reverseWaypoints: true,
-//     showAlternatives: true,
-//     altLineOptions: {
-//         styles: [
-//             {color: 'black', opacity: 0.15, weight: 9},
-//             {color: 'white', opacity: 0.8, weight: 6},
-//             {color: 'blue', opacity: 0.5, weight: 2}
-//         ]
-//     }
-// })
-// routingControl.addTo(map);
+function keSini(latLng){
+    var latLng=L.latLng(latLng);
+    routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, latLng);
+} 
 
+// Fungsi untuk membuat tombol
+function createButton(label, container, callback) {
+    var btn = L.DomUtil.create('button', '', container);
+    btn.setAttribute('type', 'button');
+    btn.innerHTML = label;
+
+    // Ketika tombol ditekan, jalankan callback function
+    L.DomEvent.on(btn, 'click', callback);
+
+    return btn;
+  }
+
+//pemetaan lokasi dipanggil dari database
 <?php foreach ($lokasi as $key => $value) { ?>
     L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
     .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
@@ -194,4 +184,24 @@ function showPosition(position) {
         '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
     .addTo(map);
 <?php } ?>
+
+map.on('click', function(e) {
+    var container = L.DomUtil.create('div'),
+        destBtn = createButton('Go to this location', container, function() {
+        routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, e.latlng);
+        map.closePopup();
+        });
+
+        L.popup()
+      .setContent(container)
+      .setLatLng(e.latlng)
+      .openOn(map);
+    
+        L.DomEvent.on(destBtn, 'click', function() {
+        routingControl.spliceWaypoints(routingControl.getWaypoints().length - 1, 1, e.latlng);
+        map.closePopup();
+    });
+
+});
+
 </script>

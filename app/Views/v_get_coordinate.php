@@ -103,4 +103,25 @@ map.on('click', function(e) {
 });
 
 map.addLayer(marker);
+
+//== Marker ==
+L.marker([-0.48090207068895996, 100.63787782846228])
+    .bindPopup("<center><img src='<?= base_url('images/mahkota.png')  ?>'width='200px'></center><br>" +
+        "<h4><center>MAHKOTA KERUPUK</center></h4>" +
+        "<b>Alamat: </b>Saruaso, Kec. Tj. Emas, Kab. Tanah Datar, Sumatera Barat<br>" +
+        "<b>Latitude: </b>-0.4807710011019512<br>" + 
+        "<b>Longitude: </b>100.6378307935375") 
+    .addTo(map);
+
+//== polygon ==
+L.polygon([
+    [-0.48089137419797784, 100.6376259817223],
+    [-0.4809991617108263, 100.63767247993664],
+    [-0.4809315303304076, 100.63791553878436],
+    [-0.48080472149033815, 100.63788594901158]
+], {
+    color: 'green',
+    fillColor: 'green',
+    fillOpacity: 1,
+}).addTo(map)
 </script>

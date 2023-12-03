@@ -9,6 +9,20 @@
 <br>
 <div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
 
+<style>
+  .leaflet-popup-content button {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
+</style>
 <!-- default leaflet -->
 <script>
 const cities = L.layerGroup();

@@ -82,7 +82,7 @@
                             <h6 class="collapse-header">View Map:</h6>
                             <a class="collapse-item" href="<?= base_url('Home/baseMap') ?>">Base Map</a>
                             <a class="collapse-item" href="<?= base_url('Home/getCoordinate') ?>">Get Coordinate</a>
-                            <a class="collapse-item" href="<?= base_url('Home/Marker') ?>">Mahkota Kerupuk Location</a>
+                            <!-- <a class="collapse-item" href="?= base_url('Home/Marker') ?>">Mahkota Kerupuk Location</a> -->
                             <a class="collapse-item" href="<?= base_url('Home/geoJSON') ?>">Distribution Area</a>
                         </div>
                     </div>
@@ -116,6 +116,7 @@
                         <h6 class="collapse-header">Routing</h6>
                         <a class="collapse-item" href="<?= base_url('Lokasi/rute') ?>">Without GPS</a>
                         <a class="collapse-item" href="<?= base_url('Lokasi/rute2') ?>">With GPS</a>
+                        <a class="collapse-item" href="<?= base_url('Lokasi/rute3') ?>">Free Roam</a>
                     </div>
                 </div>
             </li>
