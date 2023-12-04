@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\AuthFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -20,6 +21,7 @@ class Filters extends BaseConfig
      * @phpstan-var array<string, class-string|list<class-string>>
      */
     public array $aliases = [
+        'authfilter'    => AuthFilter::class,
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
@@ -34,13 +36,21 @@ class Filters extends BaseConfig
      * @var array<string, array<string, array<string, string>>>|array<string, array<string>>
      * @phpstan-var array<string, list<string>>|array<string, array<string, array<string, string>>>
      */
-    public array $globals = [
+    public $globals = [
         'before' => [
+            'authfilter'=>[ 'except' => [
+                'auth', 'auth/*',
+                 'web', 'web/*',
+                 '/'
+                ]]
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
+            'authfilter'=>[ 'except' => [
+                'home', 'home/*',
+                ]],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

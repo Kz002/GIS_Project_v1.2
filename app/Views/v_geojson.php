@@ -59,7 +59,7 @@ $.getJSON("<?= base_url('provinsi/13.geojson') ?>", function(data){
         style : function(feature) {
             return{
                 color: 'red',
-                fillOpacity: 0,
+                fillOpacity: 0.5,
             }
         }
     })
@@ -73,7 +73,7 @@ $.getJSON("<?= base_url('provinsi/14.geojson') ?>", function(data){
         style : function(feature) {
             return{
                 color: 'yellow',
-                fillOpacity: 0,
+                fillOpacity: 0.5,
             }
         }
     })
@@ -87,7 +87,7 @@ $.getJSON("<?= base_url('provinsi/16.geojson') ?>", function(data){
         style : function(feature) {
             return{
                 color: 'green',
-                fillOpacity: 0,
+                fillOpacity: 0.5,
             }
         }
     })
@@ -101,7 +101,7 @@ $.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
         style : function(feature) {
             return{
                 color: 'blue',
-                fillOpacity: 0,
+                fillOpacity: 0.5,
             }
         }
     })

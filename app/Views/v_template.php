@@ -47,9 +47,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('Home') ?>">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-globe-asia"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ADMOON <sup>haiya</sup></div>
+                <div class="sidebar-brand-text mx-3">GIS <sup>Prototype_V1.2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -237,12 +237,47 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                                <img class="img-profile rounded-circle"
-                                    src="<?=base_url('sb-admin-2/')?>img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= session()->get('nama_user')?></span>
+                                <img class="img-profile rounded-circle" 
+                                    src="<?= base_url('foto_user/'.session()->get('foto_user')) ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                            <div class="card card-primary card-outline">
+                                <div class="card-body box-profile">
+                                    <div class="text-center">
+                                    <img class="img-profile rounded-circle" width="100px"
+                                        src="<?= base_url('foto_user/'.session()->get('foto_user')) ?>"
+                                        alt="User profile picture">
+                                    </div>
+
+                                    <h3 class="profile-username text-center"><?= session()->get('nama_user')?></h3>
+
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                    <li class="list-group-item">
+                                        
+                                        <center><?= session()->get('email')?></center>
+                                        <center>
+                                        <?php if (session()->get('level') ==1) {
+                                            echo 'Admin';
+                                        }else if (session()->get('level') ==2) {
+                                            echo 'User';
+                                        } ?>
+                                    </center>
+                                    </li>
+                                    </ul>
+
+                                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -261,7 +296,7 @@
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
-                            </div>
+                            </div> -->
                         </li>
 
                     </ul>
@@ -319,7 +354,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?= base_url('Auth/logout') ?>">Logout</a>
                 </div>
             </div>
         </div>

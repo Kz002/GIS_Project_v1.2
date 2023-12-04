@@ -1,1 +1,1 @@
-<h1>ini page dashboard</h1>
+<h1>Ini Halaman Dashboard</h1>
