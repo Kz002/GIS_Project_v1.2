@@ -49,4 +49,62 @@ const layerControl = L.control.layers(baseLayers,null,{collapsed:true})
         'Alamat : <?= $value['alamat_lokasi'] ?><br>')
     .addTo(map);
 <?php } ?>
+
+
+// Sumatera Barat
+$.getJSON("<?= base_url('provinsi/13.geojson') ?>", function(data){
+    L.geoJson(data, {
+        style : function(feature) {
+            return{
+                color: 'red',
+                fillOpacity: 0.2,
+            }
+        }
+    })
+    .bindPopup("<center><img src='<?= base_url('images/sumatera-barat-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Sumatera Barat</b></h4></center>")
+    .addTo(map);
+});
+// Riau
+$.getJSON("<?= base_url('provinsi/14.geojson') ?>", function(data){
+    L.geoJson(data, {
+        style : function(feature) {
+            return{
+                color: 'yellow',
+                fillOpacity: 0.2,
+            }
+        }
+    })
+    .bindPopup("<center><img src='<?= base_url('images/riau-icon.png')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Riau</b></h4></center>")
+    .addTo(map);
+});
+// Sumatera Selatan
+$.getJSON("<?= base_url('provinsi/16.geojson') ?>", function(data){
+    L.geoJson(data, {
+        style : function(feature) {
+            return{
+                color: 'green',
+                fillOpacity: 0.2,
+            }
+        }
+    })
+    .bindPopup("<center><img src='<?= base_url('images/sumatera-selatan-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Sumatera Selatan</b></h4></center>")
+    .addTo(map);
+});
+// Kepulauan Riau
+$.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
+    L.geoJson(data, {
+        style : function(feature) {
+            return{
+                color: 'blue',
+                fillOpacity: 0.2,
+            }
+        }
+    })
+    .bindPopup("<center><img src='<?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'><br></center>" +
+        "<center><h4><b>Kepulauan Riau</b></h4></center>")
+    .addTo(map);
+});
 </script>

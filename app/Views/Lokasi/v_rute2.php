@@ -1,4 +1,5 @@
 <div class="row">
+    <!-- Kolom untuk form dan tombol -->
     <div class="col-sm-6">
         <div class="form-group">
             <label for="">Jarak (*Meter)</label>
@@ -7,7 +8,25 @@
     </div>
 </div>
 <br>
-<div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
+<div class="row">
+    <!-- Kolom untuk peta -->
+    <div class="col-sm-8">
+        <div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
+    </div>
+    <!-- Kolom untuk tab rute efektif -->
+    <div class="col-sm-4">
+        <ul class="nav nav-tabs" id="ruteTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="rute-tab" data-toggle="tab" href="#rute" role="tab" aria-controls="rute" aria-selected="true">Rute Efektif</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="ruteTabContent">
+            <div class="tab-pane fade show active" id="rute" role="tabpanel" aria-labelledby="rute-tab">
+                <div id="ruteList"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
   .leaflet-popup-content button {
@@ -166,26 +185,6 @@ function showPosition(position) {
   alert('Geolocation is not supported by this browser.');
 }
 
-//rute
-// var routingControl = L.Routing.control({
-//   waypoints: [
-//     L.latLng(position.coords.latitude, position.coords.longitude),  //asal
-//     // L.latLng(-0.9468796322548746, 100.41744287223345) //tujuan
-//   ],
-//     geocoder: L.Control.Geocoder.nominatim(),
-//     routeWhileDragging: true,
-//     reverseWaypoints: true,
-//     showAlternatives: true,
-//     altLineOptions: {
-//         styles: [
-//             {color: 'black', opacity: 0.15, weight: 9},
-//             {color: 'white', opacity: 0.8, weight: 6},
-//             {color: 'blue', opacity: 0.5, weight: 2}
-//         ]
-//     }
-// })
-// routingControl.addTo(map);
-
 <?php foreach ($lokasi as $key => $value) { ?>
     L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
     .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
@@ -194,4 +193,179 @@ function showPosition(position) {
         '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
     .addTo(map);
 <?php } ?>
+
+function ruteKeSemuaLokasi() {
+    // Menyimpan semua lokasi dari database dalam sebuah array
+    var lokasiDatabase = <?php echo json_encode($lokasi); ?>;
+
+    // Menghapus rute sebelumnya jika ada
+    if (routingControl) {
+        map.removeControl(routingControl);
+    }
+
+    // Mendefinisikan array untuk waypoints
+    var waypoints = [];
+
+    // Menambahkan lokasi dari database sebagai waypoints
+    lokasiDatabase.forEach(function(lokasi) {
+        waypoints.push(L.latLng(lokasi.latitude, lokasi.longitude));
+    });
+
+    // Menambahkan lokasi user sebagai waypoint pertama
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            userWaypoint = L.latLng(position.coords.latitude, position.coords.longitude);
+
+            var waypoints = lokasiDatabase.map(function(lokasi) {
+                return L.latLng(lokasi.latitude, lokasi.longitude);
+            });
+
+            waypoints.unshift(userWaypoint);
+
+            routingControl = L.Routing.control({
+                waypoints: waypoints,
+                geocoder: L.Control.Geocoder.nominatim(),
+                routeWhileDragging: true,
+                reverseWaypoints: true,
+                showAlternatives: true,
+                altLineOptions: {
+                    styles: [
+                        { color: 'black', opacity: 0.15, weight: 9 },
+                        { color: 'white', opacity: 0.8, weight: 6 },
+                        { color: 'blue', opacity: 0.5, weight: 2 }
+                    ]
+                },
+                createMarker: function(i, waypoint, number) {
+                    return null;
+                }
+            }).addTo(map);
+
+            var ruteList = document.getElementById('ruteList');
+            ruteList.innerHTML = '';
+
+            lokasiDatabase.forEach(function(lokasi) {
+                var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+                var distance = userWaypoint.distanceTo(lokasiLatLng).toFixed(2);
+                var listItem = document.createElement('div');
+                listItem.innerHTML = '<p><strong>' + lokasi.nama_lokasi + '</strong> - Jarak: ' + distance + ' meter</p>';
+                ruteList.appendChild(listItem);
+            });
+
+            routingControl.setWaypoints(waypoints);
+        });
+    } else {
+        alert('Geolocation is not supported by this browser.');
+    }
+
+    // Mendapatkan lokasi pengguna
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+
+        // Mendapatkan semua lokasi dari database
+        var lokasiDatabase = <?php echo json_encode($lokasi); ?>;
+        
+        // Menghitung jarak antara lokasi pengguna dan semua lokasi dari database
+        lokasiDatabase.forEach(function(lokasi) {
+            var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+            lokasi.jarakDariUser = userLatLng.distanceTo(lokasiLatLng); // Menambahkan jarak ke setiap objek lokasi
+        });
+
+        // Mengurutkan lokasi berdasarkan jarak dari lokasi pengguna (dari terdekat ke terjauh)
+        lokasiDatabase.sort(function(a, b) {
+            return a.jarakDariUser - b.jarakDariUser;
+        });
+
+        // Membuat array waypoints berdasarkan urutan terurut
+        var waypoints = [userLatLng];
+        lokasiDatabase.forEach(function(lokasi) {
+            waypoints.push(L.latLng(lokasi.latitude, lokasi.longitude));
+        });
+
+        // Membuat rute menggunakan waypoints yang telah diurutkan
+        routingControl.setWaypoints(waypoints).addTo(map);
+    });
+    // Menampilkan jarak dari lokasi pengguna ke setiap lokasi di tab rute
+    var ruteList = document.getElementById('ruteList');
+        ruteList.innerHTML = ''; // Membersihkan isi sebelumnya
+
+        lokasiDatabase.forEach(function(lokasi) {
+            var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+            var distance = userLatLng.distanceTo(lokasiLatLng).toFixed(2); // Menghitung jarak
+            var listItem = document.createElement('div');
+            listItem.innerHTML = '<p><strong>' + lokasi.nama_lokasi + '</strong> - Jarak: ' + distance + ' meter</p>';
+            ruteList.appendChild(listItem);
+        });
+
+        // Menyimpan rute yang dibuat ke dalam kontrol rute
+        routingControl.setWaypoints(waypoints);
+}
+function urutkanRuteEfektif() {
+    if (!navigator.geolocation) {
+        alert('Geolocation is not supported by this browser.');
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
+        var lokasiDatabase = <?php echo json_encode($lokasi); ?>;
+
+        lokasiDatabase.forEach(function(lokasi) {
+            var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+            lokasi.jarakDariUser = userLatLng.distanceTo(lokasiLatLng);
+        });
+
+        lokasiDatabase.sort(function(a, b) {
+            return a.jarakDariUser - b.jarakDariUser;
+        });
+
+        var ruteList = document.getElementById('ruteList');
+        ruteList.innerHTML = '';
+
+        lokasiDatabase.forEach(function(lokasi) {
+            var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+            var distance = userLatLng.distanceTo(lokasiLatLng).toFixed(2);
+            var listItem = document.createElement('div');
+            listItem.innerHTML = '<p><strong>' + lokasi.nama_lokasi + '</strong><br>Alamat: ' + lokasi.alamat_lokasi + '<br>Jarak: ' + distance + ' meter</p>';
+            ruteList.appendChild(listItem);
+        });
+
+        var waypoints = [userLatLng];
+        lokasiDatabase.forEach(function(lokasi) {
+            waypoints.push(L.latLng(lokasi.latitude, lokasi.longitude));
+        });
+
+        if (routingControl) {
+            routingControl.setWaypoints(waypoints);
+        } else {
+            routingControl = L.Routing.control({
+                waypoints: waypoints,
+                geocoder: L.Control.Geocoder.nominatim(),
+                routeWhileDragging: true,
+                reverseWaypoints: true,
+                showAlternatives: true,
+                altLineOptions: {
+                    styles: [
+                        { color: 'black', opacity: 0.15, weight: 9 },
+                        { color: 'white', opacity: 0.8, weight: 6 },
+                        { color: 'blue', opacity: 0.5, weight: 2 }
+                    ]
+                },
+                createMarker: function(i, waypoint, number) {
+                    return null;
+                }
+            }).addTo(map);
+        }
+    });
+}
+
+// Di dalam tab-pane rute efektif, tambahkan button untuk memanggil fungsi urutkanRuteEfektif()
+var ruteEfektifTabContent = document.getElementById('rute');
+var buttonUrutkanRute = document.createElement('button');
+buttonUrutkanRute.textContent = 'Urutkan Rute Efektif';
+buttonUrutkanRute.classList.add('btn', 'btn-primary', 'mt-2');
+buttonUrutkanRute.addEventListener('click', function() {
+    urutkanRuteEfektif();
+});
+ruteEfektifTabContent.appendChild(buttonUrutkanRute);
+
 </script>

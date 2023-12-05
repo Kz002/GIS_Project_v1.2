@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
 
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body style="background-image: url(<?= base_url('images/bg.jpg')  ?>)">
 
     <div class="container">
 
@@ -29,7 +29,7 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-6 d-none d-lg-block"></div>
+                    <div class="col-lg-6 d-none d-lg-block" style="background-image: url(https://images.squarespace-cdn.com/content/v1/55223b6ee4b098a11a898a5a/1435180067240-WKD5IXSRC26BOITN9ADJ/Gis-what+we+do.jpg?format=2500w)"></div>
                     <div class="col-lg-6">
                         <div class="p-5">
                             <div class="text-center">

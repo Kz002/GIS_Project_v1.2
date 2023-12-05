@@ -83,7 +83,7 @@
                             <a class="collapse-item" href="<?= base_url('Home/baseMap') ?>">Base Map</a>
                             <a class="collapse-item" href="<?= base_url('Home/getCoordinate') ?>">Get Coordinate</a>
                             <!-- <a class="collapse-item" href="?= base_url('Home/Marker') ?>">Mahkota Kerupuk Location</a> -->
-                            <a class="collapse-item" href="<?= base_url('Home/geoJSON') ?>">Distribution Area</a>
+                            <!-- <a class="collapse-item" href="?= base_url('Home/geoJSON') ?>">Distribution Area</a> -->
                         </div>
                     </div>
                 </li>
