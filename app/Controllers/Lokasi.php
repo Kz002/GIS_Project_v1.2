@@ -8,7 +8,7 @@ class Lokasi extends BaseController
     {
         $this->ModelLokasi = new ModelLokasi();
     }
-
+    
     public function index()
     {
         $data = [
@@ -89,7 +89,7 @@ class Lokasi extends BaseController
             return redirect()->to('Lokasi/inputLokasi')->withInput();
         }
     }
-
+    
     public function pemetaanlokasi()
     {
         $data = [
@@ -189,6 +189,8 @@ class Lokasi extends BaseController
         session()->setFlashdata('pesan', 'Data Lokasi Berhasil Di delete !!!');
         return redirect()->to('Lokasi/index');
     }
+
+    //pemetaan rute
     public function rute()
     {
         $data = [

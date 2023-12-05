@@ -62,8 +62,8 @@ class Auth extends BaseController
             'email' => $this->request->getPost('email'),
             'no_hp' => $this->request->getPost('no_hp'),
             'password' => $this->request->getPost('password'),
-            'level' => 3
-            //level akses 1 admon;2 user;3 pengunjung
+            'level' => 2
+            //level akses 1 admon;2 user
         );
         $this->ModelAuth->save_register($data);
         session()->setFlashdata('pesan','Regisrasi Akun Berhasil !');
@@ -131,7 +131,7 @@ class Auth extends BaseController
         session()->remove('level');
         session()->remove('foto_user');
         session()->setFlashdata('pesan','Logout Berhasil !');
-                return redirect()->to(base_url('Auth/login'));
+                return redirect()->to(base_url('web'));
 
     }
        

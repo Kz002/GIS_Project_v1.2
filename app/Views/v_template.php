@@ -89,6 +89,7 @@
                 </li>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
+                <?php if (session()->get('level')==1) { ?> 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
@@ -105,6 +106,7 @@
                         </div>
                     </div>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -247,7 +249,7 @@
                             <div class="card card-primary card-outline">
                                 <div class="card-body box-profile">
                                     <div class="text-center">
-                                    <img class="img-profile rounded-circle" width="100px"
+                                    <img class="img-profile rounded-circle" width="100px" height="100px"
                                         src="<?= base_url('foto_user/'.session()->get('foto_user')) ?>"
                                         alt="User profile picture">
                                     </div>
@@ -268,7 +270,7 @@
                                     </li>
                                     </ul>
 
-                                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                                    <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
                                     <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
