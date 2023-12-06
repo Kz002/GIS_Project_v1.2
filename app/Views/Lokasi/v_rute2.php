@@ -5,16 +5,26 @@
             <label for="">Jarak (*Meter)</label>
             <input class="form-control" name="jarak" id="Jarak">
         </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="autoZoomCheckbox" checked>
+            <label class="form-check-label" for="autoZoomCheckbox">
+                Matikan Mode Fokus
+            </label>
+        </div>
     </div>
 </div>
-<br>
+<!-- Button untuk menyembunyikan/menampilkan tab rute efektif -->
+<button class="btn btn-primary" onclick="toggleRuteEfektifSidebar()">
+    <i id="arrowIcon" class="fas fa-arrow-right"></i>
+    Rute Efektif
+</button><br>
 <div class="row">
     <!-- Kolom untuk peta -->
-    <div class="col-sm-8">
+    <div class="col-sm-8" id="map-column">
         <div id="map" style="width: 100%; height: 100vh;" class="leaflet-map-pane"></div>
     </div>
     <!-- Kolom untuk tab rute efektif -->
-    <div class="col-sm-4">
+    <div class="col-sm-4" id="ruteSidebar">
         <ul class="nav nav-tabs" id="ruteTabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="rute-tab" data-toggle="tab" href="#rute" role="tab" aria-controls="rute" aria-selected="true">Rute Efektif</a>
@@ -41,6 +51,54 @@
     border: none;
     border-radius: 4px;
   }
+
+    /* CSS untuk membuat tab content menjadi scrollable */
+    #ruteList {
+        max-height: 600px; /* Sesuaikan tinggi maksimum yang diinginkan */
+        overflow-y: auto; /* Membuat area menjadi scrollable */
+    }
+    /* CSS untuk animasi slide dari kanan */
+#ruteSidebar {
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0%;
+    right: -300px; /* Memulai dari posisi di luar layar sebelah kanan */
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-visible {
+    transform: translateX(-300px); /* Geser ke arah kiri untuk menampilkan */
+}
+
+.sidebar-hidden {
+    transform: translateX(0); /* Kembali ke posisi sembunyi saat di luar layar */
+    pointer-events: none;
+}
+  /* CSS untuk membuat peta menjadi fleksibel */
+  #map-column {
+        transition: width 0.3s ease-in-out; /* Tambahkan efek transisi saat lebar peta berubah */
+        width: calc(100% - 300px); /* Set lebar peta saat tab rute efektif ditampilkan */
+    }
+
+    .sidebar-visible #map-column {
+        width: 100%; /* Set lebar peta saat tab rute efektif ditutup */
+    }
+    #arrowIcon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-visible #arrowIcon {
+    transform: rotate(0deg); /* Ubah derajat rotasi sesuai kebutuhan */
+}
+
+.sidebar-hidden #arrowIcon {
+    transform: rotate(180deg); /* Ubah derajat rotasi sesuai kebutuhan */
+}
 </style>
 
 <!-- default leaflet -->
@@ -156,10 +214,17 @@ function getLocation() {
         x.innerHTML = "gk support bg";
     }
 }
-// Tentukan lokasi berikutnya dalam rute
+
+let autoZoomEnabled = true; // Tambahkan variabel untuk menyimpan status zoom otomatis
+// Tambahkan event listener untuk checkbox atau tombol zoom otomatis
+const autoZoomCheckbox = document.getElementById('autoZoomCheckbox');
+autoZoomCheckbox.addEventListener('change', function() {
+    autoZoomEnabled = this.checked; // Ubah status zoom otomatis berdasarkan checkbox
+});
+// Tentukan lokasi berikutnya rute
 let nextLocationIndex = 0; // Variabel untuk menyimpan indeks lokasi berikutnya dalam rute
 let lokasiDatabase = <?php echo json_encode($lokasi); ?>; // Data lokasi dari database
-let centerMap = false;
+let centerMap = true;
 function showPosition(position) {
     console.log('Route Sekarang',position.coords.latitude, position.coords.longitude)
     $("[name=latNow]").val(position.coords.latitude);
@@ -167,10 +232,9 @@ function showPosition(position) {
     let userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
     let latLng=[position.coords.latitude, position.coords.longitude];
         routingControl.spliceWaypoints(0, 1, latLng);
-        if (centerMap==false)
-        {
-            map.panTo(latLng);
-            centerMap = true;
+        if (!autoZoomEnabled) {
+        map.panTo(latLng);
+        centerMap = false;
         }
         showUserLocation(position.coords.latitude, position.coords.longitude);
 
@@ -222,6 +286,9 @@ function showPosition(position) {
     //kirim nilai jarak ke input
     document.getElementById('Jarak').value = totalDistance;
     // animasiCar(routes[0]);
+    if (autoZoomEnabled) {
+        map.fitBounds(e.routes[0].bounds); // Fokus ke batas rute yang ditemukan
+    }
     });
 });
 } else {
@@ -230,12 +297,13 @@ function showPosition(position) {
 
 <?php foreach ($lokasi as $key => $value) { ?>
     L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
-    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
+    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="150px">' + 
         '<h4><?= $value['nama_lokasi'] ?></h4>' +
         'Alamat : <?= $value['alamat_lokasi'] ?><br>' +
         '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
     .addTo(map);
 <?php } ?>
+
 
 function urutkanRuteEfektif() {
     if (!navigator.geolocation) {
@@ -260,49 +328,62 @@ function urutkanRuteEfektif() {
         var ruteList = document.getElementById('ruteList');
         ruteList.innerHTML = '';
 
-        lokasiDatabase.forEach(function(lokasi) {
-            var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
-            var distance = userLatLng.distanceTo(lokasiLatLng).toFixed(2);
-            var listItem = document.createElement('div');
-            listItem.innerHTML = '<p><strong>' + lokasi.nama_lokasi + '</strong><br>Alamat: ' + lokasi.alamat_lokasi + '<br>Jarak: ' + distance + ' meter</p>';
+    lokasiDatabase.forEach(function(lokasi) {
+        var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
+        var distance = userLatLng.distanceTo(lokasiLatLng).toFixed(2);
+        var listItem = document.createElement('div');
+        listItem.classList.add('rute-info'); // Tambahkan kelas untuk setiap informasi rute
+        listItem.innerHTML = '<p><strong>' + lokasi.nama_lokasi + '</strong><br>Alamat: ' + lokasi.alamat_lokasi + '<br>Jarak: ' + distance + ' meter</p>' +
+                             '<button class="btn btn-danger btn-sm close-btn">Close</button>'; // Tambahkan tombol Close
 
-            var zoomButton = document.createElement('button');
-            zoomButton.textContent = 'Zoom ke Lokasi';
-            zoomButton.classList.add('btn', 'btn-success', 'mt-2');
-            zoomButton.addEventListener('click', function () {
+        // Buat div untuk tombol zoom
+        var buttonDiv = document.createElement('div');
+        buttonDiv.classList.add('text-right'); // Menambahkan kelas CSS untuk membuat tombol menjadi posisi kanan
+        listItem.appendChild(buttonDiv); // Menambahkan div untuk tombol zoom ke dalam listItem
+
+        var zoomButton = document.createElement('button');
+        zoomButton.textContent = 'Zoom ke Lokasi';
+        zoomButton.classList.add('btn', 'btn-success', 'mt-2');
+        zoomButton.addEventListener('click', function () {
             map.setView(lokasiLatLng, 15); // Melakukan zoom ke lokasi dengan level zoom 15 (sesuaikan sesuai kebutuhan)
         });
-        listItem.appendChild(zoomButton);
+        buttonDiv.appendChild(zoomButton); // Menambahkan tombol zoom ke div yang telah dibuat
+
         ruteList.appendChild(listItem);
 
+        // Menambahkan event listener untuk tombol Close
+        var closeBtn = listItem.querySelector('.close-btn');
+        closeBtn.addEventListener('click', function() {
+            listItem.style.display = 'none'; // Menyembunyikan informasi rute saat tombol Close diklik
         });
-
+    });
         var waypoints = [userLatLng];
         lokasiDatabase.forEach(function(lokasi) {
             waypoints.push(L.latLng(lokasi.latitude, lokasi.longitude));
-        });
+    });
 
-        if (routingControl) {
-            routingControl.setWaypoints(waypoints);
-        } else {
-            routingControl = L.Routing.control({
-                waypoints: waypoints,
-                geocoder: L.Control.Geocoder.nominatim(),
-                routeWhileDragging: true,
-                reverseWaypoints: true,
-                showAlternatives: true,
-                altLineOptions: {
-                    styles: [
-                        { color: 'black', opacity: 0.15, weight: 9 },
-                        { color: 'white', opacity: 0.8, weight: 6 },
-                        { color: 'blue', opacity: 0.5, weight: 2 }
-                    ]
-                },
-                createMarker: function(i, waypoint, number) {
-                    return null;
-                }
-            }).addTo(map);
-        }
+        // ---- fungsi untuk menunjukkan rute semua lokasi map (tidak efektif)
+        // if (routingControl) {
+        //     routingControl.setWaypoints(waypoints);
+        // } else {
+        //     routingControl = L.Routing.control({
+        //         waypoints: waypoints,
+        //         geocoder: L.Control.Geocoder.nominatim(),
+        //         routeWhileDragging: true,
+        //         reverseWaypoints: true,
+        //         showAlternatives: true,
+        //         altLineOptions: {
+        //             styles: [
+        //                 { color: 'black', opacity: 0.15, weight: 9 },
+        //                 { color: 'white', opacity: 0.8, weight: 6 },
+        //                 { color: 'blue', opacity: 0.5, weight: 2 }
+        //             ]
+        //         },
+        //         createMarker: function(i, waypoint, number) {
+        //             return null;
+        //         }
+        //     }).addTo(map);
+        // }
     });
 }
 
@@ -314,6 +395,43 @@ buttonUrutkanRute.classList.add('btn', 'btn-primary', 'mt-2');
 buttonUrutkanRute.addEventListener('click', function() {
     urutkanRuteEfektif();
 });
-ruteEfektifTabContent.appendChild(buttonUrutkanRute);
+// Menempatkan tombol Urutkan Rute Efektif di dalam div bersama dengan judul tab
+var ruteEfektifDiv = document.createElement('div');
+ruteEfektifDiv.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-3');
+ruteEfektifDiv.appendChild(document.createElement('h5').appendChild(document.createTextNode('Rute Efektif')));
+ruteEfektifDiv.appendChild(buttonUrutkanRute);
+
+// Menghapus semua elemen di dalam tab-pane rute efektif
+while (ruteEfektifTabContent.firstChild) {
+    ruteEfektifTabContent.removeChild(ruteEfektifTabContent.firstChild);
+}
+// Menambahkan kembali elemen-elemen yang sudah disesuaikan
+ruteEfektifTabContent.appendChild(ruteEfektifDiv);
+var ruteListDiv = document.createElement('div');
+ruteListDiv.id = 'ruteList';
+ruteEfektifTabContent.appendChild(ruteListDiv);
+
+function toggleRuteEfektifSidebar() {
+    var ruteSidebar = document.getElementById('ruteSidebar');
+    var mapColumn = document.getElementById('map-column');
+    var ruteTabs = document.getElementById('ruteTabs');
+    var arrowIcon = document.getElementById('arrowIcon');
+
+    if (ruteSidebar.classList.contains('sidebar-visible')) {
+        ruteSidebar.classList.remove('sidebar-visible');
+        ruteSidebar.classList.add('sidebar-hidden');
+        mapColumn.classList.remove('col-sm-4');
+        mapColumn.classList.add('col-sm-12');
+        ruteTabs.style.display = 'none';
+        arrowIcon.style.transform = 'rotate(180deg)'; // Ubah rotasi panah saat sidebar disembunyikan
+    } else {
+        ruteSidebar.classList.remove('sidebar-hidden');
+        ruteSidebar.classList.add('sidebar-visible');
+        mapColumn.classList.remove('col-sm-12');
+        mapColumn.classList.add('col-sm-8');
+        ruteTabs.style.display = 'none';
+        arrowIcon.style.transform = 'rotate(0deg)'; // Ubah rotasi panah saat sidebar ditampilkan
+    }
+}
 
 </script>

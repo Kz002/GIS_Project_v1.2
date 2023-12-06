@@ -49,7 +49,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-globe-asia"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">GIS <sup>Prototype_V1.2</sup></div>
+                <div class="sidebar-brand-text mx-3">GIS <sup>Prototype_V1.4</sup></div>
             </a>
 
             <!-- Divider -->
@@ -116,7 +116,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Routing</h6>
-                        <a class="collapse-item" href="<?= base_url('Lokasi/rute') ?>">Without GPS</a>
+                        <!-- <a class="collapse-item" href="?= base_url('Lokasi/rute') ?>">Without GPS</a> -->
                         <a class="collapse-item" href="<?= base_url('Lokasi/rute2') ?>">With GPS</a>
                         <a class="collapse-item" href="<?= base_url('Lokasi/rute3') ?>">Free Roam</a>
                     </div>
