@@ -15,4 +15,15 @@ final class ModelAuth extends Model
             'password'=>$password,
         ])->get()->getRowArray();
     }
+    public function getDataById($id_user)
+   {
+    return $this->db->table('tbl_user')
+      ->where('id_user', $id_user)
+      ->get()->getRowArray();
+   }
+   public function getAllData()
+   {
+    return $this->db->table('tbl_user')
+      ->get()->getResultArray();
+   }
 }

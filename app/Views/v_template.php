@@ -89,24 +89,6 @@
                 </li>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
-                <?php if (session()->get('level')==1) { ?> 
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <span>Pemetaan Lokasi</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                        data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Pemetaan:</h6>
-                            <a class="collapse-item" href="<?= base_url('Lokasi/inputLokasi') ?>">Input Lokasi</a>
-                            <a class="collapse-item" href="<?= base_url('Lokasi/pemetaanLokasi') ?>">Peta Lokasi</a>
-                            <a class="collapse-item" href="<?= base_url('Lokasi/index') ?>">Data Lokasi</a>
-                        </div>
-                    </div>
-                </li>
-                <?php } ?>
                 <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -117,7 +99,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Routing</h6>
                         <!-- <a class="collapse-item" href="?= base_url('Lokasi/rute') ?>">Without GPS</a> -->
-                        <a class="collapse-item" href="<?= base_url('Lokasi/rute2') ?>">With GPS</a>
+                        <a class="collapse-item" href="<?= base_url('Lokasi/rute2') ?>">Rute Efektif</a>
                         <a class="collapse-item" href="<?= base_url('Lokasi/rute3') ?>">Free Roam</a>
                     </div>
                 </div>
@@ -128,7 +110,7 @@
 
                     <!-- Heading -->
                     <div class="sidebar-heading">
-                        Other
+                        Menu Admin
                     </div>
 
                     <!-- Nav Item - Pages Collapse Menu -->
@@ -154,12 +136,29 @@
                     </li> -->
 
                     <!-- Nav Item - Charts -->
+                    <?php if (session()->get('level')==1) { ?> 
                     <li class="nav-item">
-                        <a class="nav-link" href="charts.html">
-                        <i class="fas fa-info-circle"></i>
-                            <span>About</span></a>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Pemetaan Lokasi</span>
+                        </a>
+                        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                            data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <h6 class="collapse-header">Pemetaan:</h6>
+                                <a class="collapse-item" href="<?= base_url('Lokasi/inputLokasi') ?>">Input Lokasi</a>
+                                <a class="collapse-item" href="<?= base_url('Lokasi/pemetaanLokasi') ?>">Peta Lokasi</a>
+                                <a class="collapse-item" href="<?= base_url('Lokasi/index') ?>">Data Lokasi</a>
+                            </div>
+                        </div>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('User') ?>">
+                        <i class="fas fa-user-edit"></i>
+                            <span>Kelola User</span></a>
+                    </li>
+                    <?php } ?>
                     <!-- Nav Item - Tables -->
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="tables.html">
@@ -169,7 +168,11 @@
                 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
-
+                <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('Home/about') ?>">
+                        <i class="fas fa-info-circle"></i>
+                            <span>About</span></a>
+                    </li>
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div class="menucenter">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -278,7 +281,7 @@
                                 </a>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">

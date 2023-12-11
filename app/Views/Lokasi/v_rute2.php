@@ -82,7 +82,7 @@
   /* CSS untuk membuat peta menjadi fleksibel */
   #map-column {
         transition: width 0.3s ease-in-out; /* Tambahkan efek transisi saat lebar peta berubah */
-        width: calc(100% - 300px); /* Set lebar peta saat tab rute efektif ditampilkan */
+        width: calc(100% - 200px); /* Set lebar peta saat tab rute efektif ditampilkan */
     }
 
     .sidebar-visible #map-column {
@@ -144,7 +144,7 @@ const overlays = {
 	'Cities': cities
 };
 
-const layerControl = L.control.layers(baseLayers,null,{collapsed:false})
+const layerControl = L.control.layers(baseLayers,null,{collapsed:true})
 .addTo(map);
 
 let userMarker;
@@ -283,9 +283,13 @@ function showPosition(position) {
     var routes = e.routes;
     var summary = routes[0].summary;
     var totalDistance = summary.totalDistance;
+    var totalTime = summary.totalTime; // Waktu dalam detik
+    
     //kirim nilai jarak ke input
     document.getElementById('Jarak').value = totalDistance;
-    // animasiCar(routes[0]);
+
+    
+
     if (autoZoomEnabled) {
         map.fitBounds(e.routes[0].bounds); // Fokus ke batas rute yang ditemukan
     }
@@ -297,7 +301,7 @@ function showPosition(position) {
 
 <?php foreach ($lokasi as $key => $value) { ?>
     L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
-    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="150px">' + 
+    .bindPopup('<center><img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="150px"><center>' + 
         '<h4><?= $value['nama_lokasi'] ?></h4>' +
         'Alamat : <?= $value['alamat_lokasi'] ?><br>' +
         '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
@@ -314,10 +318,12 @@ function urutkanRuteEfektif() {
     navigator.geolocation.getCurrentPosition(function(position) {
         var userLatLng = L.latLng(position.coords.latitude, position.coords.longitude);
         var lokasiDatabase = <?php echo json_encode($lokasi); ?>;
+        var waypoints = [userLatLng];
 
         lokasiDatabase.forEach(function(lokasi) {
             var lokasiLatLng = L.latLng(lokasi.latitude, lokasi.longitude);
             lokasi.jarakDariUser = userLatLng.distanceTo(lokasiLatLng);
+            waypoints.push(L.latLng(lokasi.latitude, lokasi.longitude));
 
         });
 

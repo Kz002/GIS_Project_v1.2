@@ -66,7 +66,7 @@ const overlays = {
 	'Cities': cities
 };
 
-const layerControl = L.control.layers(baseLayers,null,{collapsed:false})
+const layerControl = L.control.layers(baseLayers,null,{collapsed:true})
 .addTo(map);
 
 let userMarker;
@@ -178,7 +178,7 @@ function createButton(label, container, callback) {
 //pemetaan lokasi dipanggil dari database
 <?php foreach ($lokasi as $key => $value) { ?>
     L.marker([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])
-    .bindPopup('<img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="250px">' + 
+    .bindPopup('<center><img src="<?= base_url('foto/'. $value['foto_lokasi']) ?>" width="150px"></center>' + 
         '<h4><?= $value['nama_lokasi'] ?></h4>' +
         'Alamat : <?= $value['alamat_lokasi'] ?><br>' +
         '<button class="btn btn-info" onclick="return keSini([<?= $value['latitude'] ?>, <?= $value['longitude'] ?>])">Tujuan</button>')
