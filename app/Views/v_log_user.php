@@ -1,3 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        /* Ganti tampilan saat dicetak */
+        @media print {
+            /* Sembunyikan tombol cetak saat dicetak */
+            button {
+                display: none;
+            }
+            /* Sembunyikan atau sesuaikan elemen-elemen lain yang tidak ingin dicetak */
+            header, footer, .delete-btn {
+                display: none;
+            }
+            /* Atur tampilan tabel saat dicetak */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            td {
+                padding: 8px;
+            }
+        }
+        /* Atur gaya untuk header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Tombol Cetak Laporan</title>
+</head>
+<body>
+
+    <!-- Isi dari halaman web Anda -->
+
+    <!-- Tombol untuk mencetak laporan -->
+    <button onclick="cetakLaporan()">Cetak Laporan</button>
+
+    <!-- JavaScript untuk melakukan pencetakan -->
+    <script>
+        function cetakLaporan() {
+            window.print(); // Memicu fungsi pencetakan bawaan browser
+        }
+    </script>
+
+</body>
+</html>
+
 <div class="card shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">
