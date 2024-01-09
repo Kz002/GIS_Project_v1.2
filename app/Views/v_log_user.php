@@ -13,24 +13,25 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>No. Hp</th>
-                        <th>Status</th>
-                        <th>Foto</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Alamat</th>
+                        <th>Tanggal</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1; 
-                    foreach ($user as $key => $value) { ?>
+                    foreach ($log as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
                             <td><?= $value['nama_user'] ?></td>
-                            <td><?= $value['email'] ?></td>
-                            <td><?= $value['level'] ?></td>
-                            <td><img src="<?= base_url('foto_user/'.$value['foto_user']) ?>" width="150px"></td>
-                            <td>
+                            <td><?= $value['latitude'] ?></td>
+                            <td><?= $value['longitude'] ?></td>
+                            <td><?= $value['alamat'] ?></td>
+                            <td><?= $value['tgl_log'] ?></td>
                                 <!-- <a href="?= base_url('User/editUser/'.$value['id_user']) ?>" class="btn btn-warning">Edit</a> -->
-                                <a href="<?= base_url('User/deleteUser/'.$value['id_user']) ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus Akun User ??')">Delete</a>
+                                <td><a href="<?= base_url('LogUser/deleteLog/'.$value['id_log']) ?>" class="btn btn-danger" onclick="return confirm('Yakin Hapus Log ??')">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>

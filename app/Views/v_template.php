@@ -33,6 +33,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>  
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+     <!-- Load Esri Leaflet from CDN -->
+     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
+    <!-- Load Esri Leaflet Geocoder from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@3.1.4/dist/esri-leaflet-geocoder.css" crossorigin="" />
+    <script src="https://unpkg.com/esri-leaflet-geocoder@3.1.4/dist/esri-leaflet-geocoder.js" crossorigin=""></script>
    
 </head>
 
@@ -158,7 +164,7 @@
                             <span>Kelola User</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('User') ?>">
+                        <a class="nav-link" href="<?= base_url('LogUser') ?>">
                         <i class="fas fa-route"></i>
                             <span>Data Log</span></a>
                     </li>

@@ -51,7 +51,8 @@ class Filters extends BaseConfig
             'authfilter'=>[ 'except' => [
                 'home', 'home/*',
                 'lokasi', 'lokasi/*',
-                'user', 'user/*'
+                'user', 'user/*',
+                'LogUser', 'LogUser/*'
                 
                 ]],
             'toolbar',

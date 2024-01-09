@@ -8,6 +8,7 @@ use App\Models\LokasiModel;
 class LokasiController extends BaseController
 {
     use ResponseTrait;
+    protected $LokasiModel; // Deklarasi variabel LokasiModel
 
     public function __construct() 
     {
@@ -16,25 +17,31 @@ class LokasiController extends BaseController
 
     public function simpanPosisi()
     {
-        // Ambil data posisi dari request
-        $requestData = $this->request->getJSON();
+        // Mendapatkan data yang dikirim dari JavaScript
+        $data = $this->request->getJSON();
 
-        // Tambahkan var_dump() untuk melihat data yang diterima dari permintaan
-        var_dump($requestData); // Debug data yang diterima
+        // Mendapatkan latitude dan longitude dari data
+        $latitude = $data->latitude;
+        $longitude = $data->longitude;
 
-        // Simpan data posisi ke dalam database (gunakan model untuk menyimpan ke database)
-        $latitude = $requestData->latitude;
-        $longitude = $requestData->longitude;
+        // Reverse Geocoding dengan layanan Esri untuk mendapatkan alamat
+        $url = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=json&featureTypes=&location=' . $longitude . ',' . $latitude;
+        $geocode = file_get_contents($url);
+        $geocodeData = json_decode($geocode, true);
 
-        // Contoh penggunaan model untuk menyimpan ke database
-        $lokasiModel = new LokasiModel();
-        $lokasiModel->insert([
-            'latitude' => $latitude,
-            'longitude' => $longitude,
-            // Tambahkan kolom lain yang diperlukan dalam tabel lokasi
-        ]);
+        // Mengambil alamat dari hasil geocoding
+        $alamat = $geocodeData['address']['Match_addr'];
 
-        // Kirim respons bahwa posisi berhasil disimpan
-        return $this->respond(['message' => 'Posisi berhasil disimpan'], 200);
+        // Mendapatkan nama pengguna dari sesi yang aktif
+        $session = session(); // Mendapatkan instance session
+        $nama_user = $session->get('nama_user'); // Ganti 'username' dengan kunci yang benar untuk nama pengguna
+
+        $result = $this->LokasiModel->simpanData($nama_user, $latitude, $longitude, $alamat);
+
+        if ($result) {
+            echo "Data lokasi berhasil disimpan";
+        } else {
+            echo "Gagal menyimpan data lokasi";
+        }
     }
 }

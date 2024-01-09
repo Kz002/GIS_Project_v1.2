@@ -2338,3 +2338,1341 @@ INFO - 2024-01-09 05:57:46 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-01-09 05:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-01-09 06:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-01-09 06:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:26:16 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:26:16 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:26:24 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:26:24 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:30:11 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=12868 in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#9 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:30:11 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:30:16 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=12868 in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#9 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:30:16 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:32:07 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=11212 in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 185, Array)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#9 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:32:07 --> Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 07:33:29 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\app\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-09 07:33:29 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_lokasi`', [], false)
+ 3 APPPATH\Models\modelLokasi.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Lokasi.php(208): App\Models\ModelLokasi->getAllData()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Lokasi->rute2()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Lokasi))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:37:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:40:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:53:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:53:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:53:32 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:54:15 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:55:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:55:26 --> Undefined variable: data
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:55:48 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:56:46 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 16.
+ 1 APPPATH\Controllers\LokasiController.php(16): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 16, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:57:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 07:57:36 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 07:59:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 07:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:14:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:18:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 08:23:20 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 08:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:23:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:30:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-01-09 08:30:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db-gisproject', 3306, '', 0)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\GIS_Project_v1.2\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\GIS_Project_v1.2\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\LokasiController.php(35): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+#9 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+#10 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\GIS_Project_v1.2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\GIS_Project_v1.2\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#3 C:\xampp\htdocs\GIS_Project_v1.2\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\GIS_Project_v1.2\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\GIS_Project_v1.2\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\GIS_Project_v1.2\app\Controllers\LokasiController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+#8 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+#9 C:\xampp\htdocs\GIS_Project_v1.2\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\GIS_Project_v1.2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-01-09 08:30:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_log` (`latitude`, `longitude`, `tgl_log`) VALUES (:latitude:, :longitude:, :tgl_log:)', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\LokasiController.php(35): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 08:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 08:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:07:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 09:07:01 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 09:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 09:07:29 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 09:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 09:07:50 --> Undefined property: stdClass::$tgl_log
+in APPPATH\Controllers\LokasiController.php on line 28.
+ 1 APPPATH\Controllers\LokasiController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$tgl_log', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 28, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 09:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 09:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:48:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 13:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 13:59:15 --> Undefined property: App\Controllers\log_user::$DataUser
+in APPPATH\Controllers\log_user.php on line 17.
+ 1 APPPATH\Controllers\log_user.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\log_user::$DataUser', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\log_user.php', 17, [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 13:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 13:59:36 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:00:52 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:00:54 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:01:14 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:01:15 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:01:40 --> Undefined index: latitude
+in APPPATH\Views\v_log_user.php on line 26.
+ 1 APPPATH\Views\v_log_user.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: latitude', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\log_user.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:02:21 --> Class 'App\Controllers\LokasiModel' not found
+in APPPATH\Controllers\log_user.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\log_user->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:03:36 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\log_user.php(17): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:03:54 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\log_user.php(17): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:05:37 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\log_user.php(17): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\log_user->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\log_user))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:07:38 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:09:30 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:09:57 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:09:58 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:09:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:10:00 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-09 14:10:26 --> syntax error, unexpected ']'
+in APPPATH\Controllers\LokasiController.php on line 47.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('LokasiController/log_user', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('LokasiController/log_user')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('LokasiController/log_user')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-09 14:10:27 --> syntax error, unexpected ']'
+in APPPATH\Controllers\LokasiController.php on line 47.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('LokasiController/log_user', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('LokasiController/log_user')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('LokasiController/log_user')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:10:46 --> Undefined variable: user
+in APPPATH\Views\v_log_user.php on line 22.
+ 1 APPPATH\Views\v_log_user.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: user', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 22, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LokasiController.php(48): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:10:47 --> Undefined variable: user
+in APPPATH\Views\v_log_user.php on line 22.
+ 1 APPPATH\Views\v_log_user.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: user', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 22, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LokasiController.php(48): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:10:49 --> Undefined variable: user
+in APPPATH\Views\v_log_user.php on line 22.
+ 1 APPPATH\Views\v_log_user.php(22): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: user', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 22, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(323): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LokasiController.php(48): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:10:52 --> Call to undefined method App\Models\LokasiModel::getAlldata
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\LokasiController.php(46): CodeIgniter\Model->__call('getAlldata', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->log_user()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:12:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:25:04 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:25:23 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:25:46 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:27:36 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:29:48 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:31:38 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;1.3368765775091&gt;&amp;lon=&lt;103.78564439714&gt;&amp;&lt;params&gt;): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;1.3368765775091&gt;&amp;lon=&lt;103.78564439714&gt;&amp;&lt;params&gt;): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=<1.3368765775091>&lon=<103.78564439714>&<params>')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:32:02 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:33:47 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:34:10 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:36:10 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:39:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:39:23 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:41:22 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;1.3368765775091&gt;&amp;lon=&lt;103.78564439714&gt;&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;1.3368765775091&gt;&amp;lon=&lt;103.78564439714&gt;&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=<1.3368765775091>&lon=<103.78564439714>&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:43:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:43:49 --> syntax error, unexpected ']'
+in APPPATH\Controllers\LokasiController.php on line 42.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\LokasiController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\LokasiController')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\LokasiController')
+ 5 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\LokasiController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:44:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:44:50 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;&gt;&amp;lon=&lt;&gt;&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=&lt;&gt;&amp;lon=&lt;&gt;&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=<>&lon=<>&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:45:10 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:49:28 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 30.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&amp;lon=103.78564439714&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 30, [...])
+ 2 APPPATH\Controllers\LokasiController.php(30): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=1.3368765775091&lon=103.78564439714&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:53:56 --> Class 'App\Controllers\mysqli' not found
+in APPPATH\Controllers\LokasiController.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:57:07 --> Undefined variable: ModelLokasi
+in APPPATH\Controllers\LokasiController.php on line 34.
+ 1 APPPATH\Controllers\LokasiController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: ModelLokasi', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 14:57:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 14:57:29 --> Undefined variable: LokasiModel
+in APPPATH\Controllers\LokasiController.php on line 34.
+ 1 APPPATH\Controllers\LokasiController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: LokasiModel', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 14:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:00:02 --> Undefined variable: LokasiModel
+in APPPATH\Controllers\LokasiController.php on line 35.
+ 1 APPPATH\Controllers\LokasiController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: LokasiModel', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 35, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:00:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:00:51 --> Undefined variable: LokasiModel
+in APPPATH\Controllers\LokasiController.php on line 35.
+ 1 APPPATH\Controllers\LokasiController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: LokasiModel', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 35, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:05:15 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat={$latitude}&amp;lon={$longitude}&amp;format=json100.77519965133,-0.67793623644337): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 29.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat={$latitude}&amp;lon={$longitude}&amp;format=json100.77519965133,-0.67793623644337): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 29, [...])
+ 2 APPPATH\Controllers\LokasiController.php(29): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat={$latitude}&lon={$longitude}&format=json100.77519965133,-0.67793623644337')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:06:21 --> file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=-0.67793623644337&amp;lon=100.77519965133&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+in APPPATH\Controllers\LokasiController.php on line 29.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(https://nominatim.openstreetmap.org/reverse?lat=-0.67793623644337&amp;lon=100.77519965133&amp;format=json): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Controllers\\LokasiController.php', 29, [...])
+ 2 APPPATH\Controllers\LokasiController.php(29): file_get_contents('https://nominatim.openstreetmap.org/reverse?lat=-0.67793623644337&lon=100.77519965133&format=json')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LokasiController->simpanPosisi()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LokasiController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:09:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:38:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:39:15 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:40:37 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:40:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:40:40 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:40:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:40:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:40:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:40:58 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:41:54 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:43:45 --> Allowed memory size of 536870912 bytes exhausted (tried to allocate 4096 bytes)
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-01-09 15:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:46:05 --> Class 'App\Models\TabelLog' not found
+in APPPATH\Controllers\LogUser.php on line 9.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\LogUser->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:46:42 --> Undefined index: nama_user
+in APPPATH\Views\v_log_user.php on line 28.
+ 1 APPPATH\Views\v_log_user.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nama_user', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 28, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(329): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LogUser.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LogUser->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogUser))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:50:05 --> Undefined index: Tanggal
+in APPPATH\Views\v_log_user.php on line 31.
+ 1 APPPATH\Views\v_log_user.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: Tanggal', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 31, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(329): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LogUser.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LogUser->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogUser))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:52:36 --> Undefined variable: LogUser
+in APPPATH\Views\v_log_user.php on line 25.
+ 1 APPPATH\Views\v_log_user.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: LogUser', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 25, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(329): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LogUser.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LogUser->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogUser))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-09 15:54:38 --> Undefined index: nama_user
+in APPPATH\Views\v_log_user.php on line 28.
+ 1 APPPATH\Views\v_log_user.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nama_user', 'C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php', 28, [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_log_user.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_log_user', [], true)
+ 5 APPPATH\Views\v_template.php(329): view('v_log_user')
+ 6 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\GIS_Project_v1.2\\app\\Views\\v_template.php')
+ 7 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('v_template', [], true)
+ 9 APPPATH\Controllers\LogUser.php(19): view('v_template', [...])
+10 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\LogUser->index()
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogUser))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-09 15:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:59:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 15:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:21:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:30:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:32:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:34:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:34:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:38:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-09 16:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

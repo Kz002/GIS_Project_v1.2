@@ -425,7 +425,7 @@ function saveUserLocationToDatabase() {
                     }
                 }
             };
-            const data = JSON.stringify({ latitude, longitude });
+            const data = JSON.stringify({latitude, longitude});
             xhr.send(data);
         });
     } else {
