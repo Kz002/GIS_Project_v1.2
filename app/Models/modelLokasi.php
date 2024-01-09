@@ -42,4 +42,17 @@ class ModelLokasi extends Model
      ->where('id_lokasi', $data['id_lokasi'])
      ->delete($data);
     }
+    public function simpanPosisi($latitude, $longitude) {
+      // Lakukan penyimpanan data posisi ke dalam tabel 'tbl_log'
+      $data = array(
+          'latitude' => $latitude,
+          'longitude' => $longitude
+          // Tambahkan kolom lainnya jika ada
+      );
+
+      // Simpan data ke dalam tabel 'tbl_log'
+      $result = $this->db->insert('tbl_log', $data);
+
+      return $result;
+  }
 }

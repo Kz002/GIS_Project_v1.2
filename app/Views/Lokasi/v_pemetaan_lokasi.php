@@ -103,7 +103,7 @@ $.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
             }
         }
     })
-    .bindPopup("<center><img src='<?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'><br></center>" +
+    .bindPopup("<center><img src='<?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'></center><br>" +
         "<center><h4><b>Kepulauan Riau</b></h4></center>")
     .addTo(map);
 });

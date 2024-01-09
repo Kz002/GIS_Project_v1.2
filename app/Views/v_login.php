@@ -21,7 +21,7 @@
 
 </head>
 
-<body style="background-image: url(<?= base_url('images/bg.jpg')  ?>)">
+<body style="background-image: url(<?= base_url('images/ss.jpg')  ?>)">
 
     <div class="container">
 
@@ -81,6 +81,36 @@
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
                                     </div> -->
                                 </div>
+                                <!-- <div class="form-group">
+                                    <label for="checkbox1">
+                                        <input type="checkbox" id="adminCheckbox" name="admin" value="admin" onchange="checkAdmin()">
+                                        Admin
+                                    </label>
+                                    <label for="checkbox2">
+                                        <input type="checkbox" id="userCheckbox" name="user" value="user" onchange="checkUser()">
+                                        User
+                                    </label>
+                                </form>
+                                </div> -->
+                                <!-- <script>
+                                    function checkAdmin() {
+                                        var adminCheckbox = document.getElementById("adminCheckbox");
+                                        var userCheckbox = document.getElementById("userCheckbox");
+
+                                        if (adminCheckbox.checked) {
+                                            userCheckbox.checked = false;
+                                        }
+                                    }
+
+                                    function checkUser() {
+                                        var adminCheckbox = document.getElementById("adminCheckbox");
+                                        var userCheckbox = document.getElementById("userCheckbox");
+
+                                        if (userCheckbox.checked) {
+                                            adminCheckbox.checked = false;
+                                        }
+                                    }
+                                </script> -->
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Login Account
                                 </button>
@@ -89,9 +119,9 @@
                             <!-- <div class="text-center">
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div> -->
-                            <div class="text-center">
-                                <a class="small" href="<?=base_url('Auth/register')?>">Belum Punya Akun? Register!</a>
-                            </div>
+                            <!-- <div class="text-center">
+                                <a class="small" href="?=base_url('Auth/register')?>">Belum Punya Akun? Register!</a>
+                            </div> -->
                         </div>
                     </div>
                 </div>

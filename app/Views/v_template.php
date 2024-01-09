@@ -105,13 +105,6 @@
                 </div>
             </li>
             
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Menu Admin
-                    </div>
 
                     <!-- Nav Item - Pages Collapse Menu -->
                     <!-- <li class="nav-item active">
@@ -137,6 +130,12 @@
 
                     <!-- Nav Item - Charts -->
                     <?php if (session()->get('level')==1) { ?> 
+                        <!-- Divider -->
+                    <hr class="sidebar-divider">
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        Menu Admin
+                    </div>
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                             aria-expanded="true" aria-controls="collapseUtilities">
@@ -157,6 +156,11 @@
                         <a class="nav-link" href="<?= base_url('User') ?>">
                         <i class="fas fa-user-edit"></i>
                             <span>Kelola User</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('User') ?>">
+                        <i class="fas fa-route"></i>
+                            <span>Data Log</span></a>
                     </li>
                     <?php } ?>
                     <!-- Nav Item - Tables -->

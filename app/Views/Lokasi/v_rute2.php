@@ -17,7 +17,11 @@
 <button class="btn btn-primary" onclick="toggleRuteEfektifSidebar()">
     <i id="arrowIcon" class="fas fa-arrow-right"></i>
     Rute Efektif
-</button><br>
+</button>
+
+<button class="btn btn-primary" onclick="saveUserLocationToDatabase()">
+    Simpan Posisi
+</button>
 <div class="row">
     <!-- Kolom untuk peta -->
     <div class="col-sm-8" id="map-column">
@@ -237,47 +241,7 @@ function showPosition(position) {
         centerMap = false;
         }
         showUserLocation(position.coords.latitude, position.coords.longitude);
-
-    // Pastikan masih ada lokasi berikutnya dalam rute
-    if (nextLocationIndex < lokasiDatabase.length) {
-        var nextLocation = lokasiDatabase[nextLocationIndex];
-        var targetLatLng = L.latLng(nextLocation.latitude, nextLocation.longitude);
-        var distance = userLatLng.distanceTo(targetLatLng);
-
-        if (distance <= 50) { // Jarak dalam meter ketika notifikasi muncul
-            if (confirm('Anda telah mencapai tujuan ini. Lanjutkan ke tujuan berikutnya?')) {
-                // Update lokasi berikutnya untuk navigasi ke rute selanjutnya
-                nextLocationIndex++;
-
-                if (nextLocationIndex < lokasiDatabase.length) {
-                    // Dapatkan koordinat lokasi berikutnya
-                    var newLocation = lokasiDatabase[nextLocationIndex];
-                    targetLocation = L.latLng(newLocation.latitude, newLocation.longitude);
-
-                    // Update waypoints dengan lokasi berikutnya
-                    var waypoints = routingControl.getWaypoints();
-                    waypoints.splice(waypoints.length - 1, 1, targetLocation);
-
-                    // Update rute pada peta
-                    routingControl.setWaypoints(waypoints);
-                    
-                    // Tampilkan informasi baru atau navigasi ke titik selanjutnya
-                    L.popup()
-                    .setLatLng(targetLocation)
-                    .setContent('Anda sekarang menuju ke: ' + newLocation.nama_lokasi)
-                    .openOn(map);
-                } else {
-                    alert('Anda telah mencapai tujuan akhir.');
-                    routingControl.setWaypoints([]);
-                    // Tambahkan logika atau aksi yang sesuai jika sudah mencapai tujuan akhir
-                }
-            } else {
-                // Jika pengguna memilih untuk tidak melanjutkan
-                // Tambahkan logika atau aksi yang sesuai di sini
-            }
-        }
     }
-}
 
     routingControl.on('routesfound', function(e) {
     var routes = e.routes;
@@ -439,5 +403,36 @@ function toggleRuteEfektifSidebar() {
         arrowIcon.style.transform = 'rotate(0deg)'; // Ubah rotasi panah saat sidebar ditampilkan
     }
 }
+function saveUserLocationToDatabase() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Kirim data ke server menggunakan AJAX (XMLHttpRequest)
+            const xhr = new XMLHttpRequest();
+            const url = 'http://localhost/GIS_Project_v1.2/public/simpan-posisi';
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Penanganan jika penyimpanan berhasil
+                        alert('Posisi berhasil disimpan!');
+                    } else {
+                        // Penanganan jika ada kesalahan saat menyimpan
+                        alert('Gagal menyimpan posisi.');
+                    }
+                }
+            };
+            const data = JSON.stringify({ latitude, longitude });
+            xhr.send(data);
+        });
+    } else {
+        // Handle jika geolocation tidak didukung oleh browser
+        alert('Geolocation tidak didukung oleh browser ini.');
+    }
+}
+
 
 </script>
