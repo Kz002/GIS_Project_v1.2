@@ -131,7 +131,7 @@ class Auth extends BaseController
         session()->remove('level');
         session()->remove('foto_user');
         session()->setFlashdata('pesan','Logout Berhasil !');
-                return redirect()->to(base_url('web'));
+                return redirect()->to(base_url('home'));
 
     }
     

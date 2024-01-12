@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"> Sistem Informasi Geografis <small>Prototype v1.3</small></h1>
+            <h1 class="m-0"> Sistem Informasi Geografis <small>Prototype v1.8</small></h1>
           </div><!-- /.col -->
           <!-- <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
