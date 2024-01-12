@@ -95,7 +95,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="print-only">No</th>
+                            <th>No</th>
                             <th>Nama</th>
                             <th>Latitude</th>
                             <th>Longitude</th>
@@ -108,7 +108,7 @@
                         <?php $no = 1; 
                         foreach ($log as $key => $value) { ?>
                             <tr>
-                                <td class="print-only"><?= $no++ ?></td>
+                                <td><?= $no++ ?></td>
                                 <td><?= $value['nama_user'] ?></td>
                                 <td><?= $value['latitude'] ?></td>
                                 <td><?= $value['longitude'] ?></td>

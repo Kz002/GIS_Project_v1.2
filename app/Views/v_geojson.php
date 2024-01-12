@@ -95,20 +95,20 @@ $.getJSON("<?= base_url('provinsi/16.geojson') ?>", function(data){
         "<center><h4><b>Sumatera Selatan</b></h4></center>")
     .addTo(map);
 });
-// Kepulauan Riau
-$.getJSON("<?= base_url('provinsi/21.geojson') ?>", function(data){
-    L.geoJson(data, {
-        style : function(feature) {
-            return{
-                color: 'blue',
-                fillOpacity: 0.5,
-            }
-        }
-    })
-    .bindPopup("<center><img src='<?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'><br></center>" +
-        "<center><h4><b>Kepulauan Riau</b></h4></center>")
-    .addTo(map);
-});
+// // Kepulauan Riau
+// $.getJSON("?= base_url('provinsi/21.geojson') ?>", function(data){
+//     L.geoJson(data, {
+//         style : function(feature) {
+//             return{
+//                 color: 'blue',
+//                 fillOpacity: 0.5,
+//             }
+//         }
+//     })
+//     .bindPopup("<center><img src='?= base_url('images/kep-riau-icon.jpg')  ?>' width='250px'><br></center>" +
+//         "<center><h4><b>Kepulauan Riau</b></h4></center>")
+//     .addTo(map);
+// });
 
 // Circle untuk menandakan Kota, Prov Sumbar
 // L.circle([-0.5974628561058486, 100.73632188357192], {

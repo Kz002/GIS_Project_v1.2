@@ -48,14 +48,14 @@
     <div id="wrapper">
     
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('Home') ?>">
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-globe-asia"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">GIS <sup>Prototype_V1.4</sup></div>
+                <div class="sidebar-brand-text mx-3">GIS <sup>Prototype_V1.8</sup></div>
             </a>
 
             <!-- Divider -->
@@ -168,6 +168,12 @@
                         <i class="fas fa-route"></i>
                             <span>Data Log</span></a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="?= base_url('LogUser/cetakLog') ?>">
+                        <i class="fas fa-route"></i>
+                            <span>Cetak Log</span></a>
+                    </li> -->
+                    
                     <?php } ?>
                     <!-- Nav Item - Tables -->
                     <!-- <li class="nav-item">
@@ -209,12 +215,13 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            
+                            <!-- <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2"> -->
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <!-- <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </form>
@@ -338,7 +345,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Taufiq Hidayat 2023</span>
+                        <span>Copyright &copy; Taufiq Hidayat 2024</span>
                     </div>
                 </div>
             </footer>

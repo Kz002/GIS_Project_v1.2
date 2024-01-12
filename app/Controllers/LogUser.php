@@ -12,12 +12,22 @@ class LogUser extends BaseController
     public function index()
     {
         $data = [
-            'judul' => 'Log User',
+            'judul' => 'Data Log',
             'page'  => 'v_log_user',
             'log' => $this->TabelLog->getAlldata(),
         ];
         return view('v_template', $data);
     }
+    public function cetakLog()
+    {
+        $data = [
+            'judul' => '',
+            'page'  => 'v_cetak_log_user',
+            'log' => $this->TabelLog->getAlldata(),
+        ];
+        return view('v_template', $data);
+    }
+
     public function deleteLog($id_log)
     {
         $data = [
